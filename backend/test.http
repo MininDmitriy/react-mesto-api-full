@@ -1,4 +1,4 @@
-POST http://localhost:3000/users
+POST http://158.160.22.173:3000/users
 Accept: application/json
 Content-Type: application/json
 

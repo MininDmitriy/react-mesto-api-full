@@ -6,6 +6,7 @@ const rateLimit = require('express-rate-limit');
 const routes = require('./routes/index');
 const { handlerErrors } = require('./middlewares/hendlerErrors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { handlerCORS } = require('./middlewares/handlerCORS');
 
 const PORT = 3000;
 
@@ -25,6 +26,8 @@ app.use(helmet());
 
 app.use(requestLogger);
 
+app.use(handlerCORS);
+
 app.use('/', routes);
 
 app.use(errorLogger);
@@ -33,7 +36,7 @@ app.use(errors());
 
 app.use(handlerErrors);
 
-mongoose.connect('mongodb://localhost:27017/mestodb', {
+mongoose.connect('mongodb://localhost:27017/db', {
   useNewUrlParser: true,
 });
 

@@ -80,9 +80,9 @@ class Api {
 }
 
 const api = new Api({
-  url: 'https://mesto.nomoreparties.co/v1/cohort-50/',
+  url: 'https://api.dbminin.students.nomoredomains.club/',
   headers: {
-    authorization: 'b1d31de1-5ebb-4a9e-a4d6-eae276edeb78',
+    // authorization: 'b1d31de1-5ebb-4a9e-a4d6-eae276edeb78',
     'content-type': 'application/json'
   }
 })
