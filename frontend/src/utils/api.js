@@ -80,7 +80,7 @@ class Api {
 }
 
 const api = new Api({
-  url: 'https://api.dbminin.students.nomoredomains.club/',
+  url: 'http://api.dbminin.students.nomoredomains.club/',
   headers: {
     // authorization: 'b1d31de1-5ebb-4a9e-a4d6-eae276edeb78',
     'content-type': 'application/json'
