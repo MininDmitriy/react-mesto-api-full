@@ -188,20 +188,22 @@ function App() {
 
   function checkToken() {
     const jwt = localStorage.getItem('jwt');
-    checkUserJWT(jwt)
-      .then((data) => {
-        if(data) {
-          setLoggedIn(true);
-          setEmail(data.data.email);
-          history.push("/");
-        }
-      })
-      .catch(err => {
-        console.log(err);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      })
+    if (jwt) {
+      checkUserJWT(jwt)
+        .then((data) => {
+          if(data) {
+            setLoggedIn(true);
+            setEmail(data.data.email);
+            history.push("/");
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        })
+    }
   }
 
   function onSignOut() {
