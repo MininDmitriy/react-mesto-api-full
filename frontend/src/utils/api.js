@@ -82,7 +82,7 @@ class Api {
 const api = new Api({
   url: 'http://api.dbminin.students.nomoredomains.club/',
   headers: {
-    // authorization: 'b1d31de1-5ebb-4a9e-a4d6-eae276edeb78',
+    authorization: `Bearer ${localStorage.getItem('jwt')}`,
     'content-type': 'application/json'
   }
 })
