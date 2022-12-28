@@ -6,7 +6,7 @@ const rateLimit = require('express-rate-limit');
 const routes = require('./routes/index');
 const { handlerErrors } = require('./middlewares/hendlerErrors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-const { handlerCORS } = require('./middlewares/handlerCORS');
+const handlerCORS = require('./middlewares/handlerCORS');
 
 const PORT = 3000;
 
