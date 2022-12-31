@@ -12,7 +12,7 @@ import InfoTooltip from "./InfoTooltip";
 import api from "../utils/api";
 import { handleRegistration, checkUserJWT, handleAuthenticate } from "../utils/authenticate";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import ProtectedRoute from "./ProtectedRoute";
 import { Route, Switch, Redirect, useHistory } from "react-router-dom";
 
@@ -186,23 +186,25 @@ function App() {
       })
   }
 
-  function checkToken() {
+  const checkToken = useCallback(() => {
     const jwt = localStorage.getItem('jwt');
-    checkUserJWT(jwt)
-      .then((data) => {
-        if(data) {
-          setLoggedIn(true);
-          setEmail(data.data.email);
-          history.push("/");
-        }
-      })
-      .catch(err => {
-        console.log(err);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      })
-  }
+    if(jwt) {
+      checkUserJWT(jwt)
+        .then((data) => {
+          if(data) {
+            setLoggedIn(true);
+            setEmail(data.email);
+            history.push("/");
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        })
+    }
+  }, []);
 
   function onSignOut() {
     setLoggedIn(false);
@@ -226,7 +228,6 @@ function App() {
                         onClick={handleCardClick}
                         cards={cards}
                         onCardLike={handleCardLike}
-                        onCardDelete={handleCardDelete}
                         onOpenConfirmationPopup={handleConfirmationPopup}
                         setCardId={setCardId}
         />

@@ -4,7 +4,12 @@ import { useContext } from "react";
 
 function Main(props) {
   const currentUser = useContext(CurrentUserContext);
-
+  const cardItems = props.cards.map((item) => <Card key={item._id}
+                                                    card={item}
+                                                    onCardClick={props.onClick}
+                                                    onCardLike={props.onCardLike}
+                                                    onOpenConfirmationPopup={props.onOpenConfirmationPopup}
+                                                    setCardId={props.setCardId} />);
   return (
     <main className="main root__main">
 
@@ -22,13 +27,7 @@ function Main(props) {
 
       <section className="elements main__elements">
         <ul className="elements__cards">
-          {props.cards.map((item) => <Card key={item._id}
-                                           card={item}
-                                           onCardClick={props.onClick}
-                                           onCardLike={props.onCardLike}
-                                           onCardDelete={props.onCardDelete}
-                                           onOpenConfirmationPopup={props.onOpenConfirmationPopup}
-                                           setCardId={props.setCardId} />)}
+          {cardItems}
         </ul>
       </section>
 

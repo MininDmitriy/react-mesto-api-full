@@ -1,27 +1,35 @@
 class Api {
   constructor(data) {
     this._url = data.url;
-    this._headers = data.headers;
   }
 
   getInfoAboutProfile() {
-    return fetch(`${this._url}users/me`, {
+    return fetch(`${this._url}/users/me`, {
       method: 'GET',
-      headers: this._headers
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        'content-type': 'application/json'
+      }
     }).then(this._checkResponse);
   }
 
   getInfoAboutCards() {
-    return fetch(`${this._url}cards`, {
+    return fetch(`${this._url}/cards`, {
       method: 'GET',
-      headers: this._headers
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        'content-type': 'application/json'
+      }
     }).then(this._checkResponse);
   }
 
   changeProfile({newName, newInfo}) {
-    return fetch(`${this._url}users/me`, {
+    return fetch(`${this._url}/users/me`, {
       method: 'PATCH',
-      headers: this._headers,
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        'content-type': 'application/json'
+      },
       body: JSON.stringify({
         name: `${newName}`,
         about: `${newInfo}`
@@ -30,9 +38,12 @@ class Api {
   }
 
   changeAvatar({avatarNew}) {
-    return fetch(`${this._url}users/me/avatar`, {
+    return fetch(`${this._url}/users/me/avatar`, {
       method: 'PATCH',
-      headers: this._headers,
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        'content-type': 'application/json'
+      },
       body: JSON.stringify({
         avatar: `${avatarNew}`,
       })
@@ -40,9 +51,12 @@ class Api {
   }
 
   addNewCard({name, link}) {
-    return fetch(`${this._url}cards`, {
+    return fetch(`${this._url}/cards`, {
       method: 'POST',
-      headers: this._headers,
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        'content-type': 'application/json'
+      },
       body: JSON.stringify({
         name: `${name}`,
         link: `${link}`
@@ -51,22 +65,31 @@ class Api {
   }
 
   deleteCard(id) {
-    return fetch(`${this._url}cards/${id}`, {
+    return fetch(`${this._url}/cards/${id}`, {
       method: 'DELETE',
-      headers: this._headers
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        'content-type': 'application/json'
+      }
     }).then(this._checkResponse);
   }
 
   changeLikeCardStatus(cardId, cardHaveMyLike) {
     if(cardHaveMyLike) {
-      return fetch(`${this._url}cards/${cardId}/likes`, {
+      return fetch(`${this._url}/cards/${cardId}/likes`, {
         method: 'PUT',
-        headers: this._headers
+        headers: {
+          authorization: `Bearer ${localStorage.getItem('jwt')}`,
+          'content-type': 'application/json'
+        }
       }).then(this._checkResponse);
     } else {
-      return fetch(`${this._url}cards/${cardId}/likes`, {
+      return fetch(`${this._url}/cards/${cardId}/likes`, {
         method: 'DELETE',
-        headers: this._headers
+        headers: {
+          authorization: `Bearer ${localStorage.getItem('jwt')}`,
+          'content-type': 'application/json'
+        }
       }).then(this._checkResponse);
     }
   }
@@ -80,11 +103,7 @@ class Api {
 }
 
 const api = new Api({
-  url: 'http://api.dbminin.students.nomoredomains.club/',
-  headers: {
-    authorization: `Bearer ${localStorage.getItem('jwt')}`,
-    'content-type': 'application/json'
-  }
+  url: 'http://localhost:3000'
 })
 
 export default api;
