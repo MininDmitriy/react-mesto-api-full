@@ -1,4 +1,4 @@
-export const baseUrl = 'http://localhost:3000';
+export const baseUrl = 'https://api.dbminin.students.nomoredomains.club';
 
 export const handleRegistration = (userPassword, userEmail) => {
   return fetch(`${baseUrl}/signup`, {

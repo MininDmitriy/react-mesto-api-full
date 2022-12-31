@@ -103,7 +103,7 @@ class Api {
 }
 
 const api = new Api({
-  url: 'http://localhost:3000'
+  url: 'https://api.dbminin.students.nomoredomains.club'
 })
 
 export default api;
