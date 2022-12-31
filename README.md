@@ -18,5 +18,6 @@
 ## Ссылка на сайт
 
 Работа размещена на на [Яндекс.Облаке](https://DBMinin.students.nomoredomains.club).
+Можно обратиться к серверу по [этой ссылке](158.160.22.173).
 IP сервера - 158.160.22.173
 URl сервера - https://DBMinin.students.nomoredomains.club
