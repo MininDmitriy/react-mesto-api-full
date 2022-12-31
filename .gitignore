@@ -19,7 +19,7 @@ npm-debug.log*
 
 # Dependency directory
 node_modules
-mestodb
+/mestodb
 
 # Optional npm cache directory
 .npm
