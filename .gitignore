@@ -6,9 +6,6 @@
 .pnp.js
 .idea
 
-/backend/package.json
-/backend/package-lock.json
-
 # testing
 /coverage
 
