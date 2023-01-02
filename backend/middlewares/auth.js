@@ -2,6 +2,16 @@ const JWT = require('jsonwebtoken');
 const { message } = require('../helpers/constants');
 const UnauthorizedError = require('../errors/UnauthorizedError');
 
+require('dotenv').config();
+const { NODE_ENV, JWT_SECRET } = process.env;
+
+let privateKey;
+if(NODE_ENV === 'production') {
+  privateKey = JWT_SECRET;
+} else {
+  privateKey = 'dev-secret';
+}
+
 const checkAuth = (req, res, next) => {
   const { authorization } = req.headers;
 
@@ -13,7 +23,6 @@ const checkAuth = (req, res, next) => {
   let payload;
 
   try {
-    const privateKey = 'my_secret_key';
     payload = JWT.verify(token, privateKey);
   } catch (err) {
     return next(new UnauthorizedError(message.errorIncorrectDate.token));
