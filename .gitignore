@@ -6,11 +6,11 @@
 .pnp.js
 .idea
 
+package.json
+package-lock.json
+
 # testing
 /coverage
-
-# production
-/build
 
 # Logs
 logs
