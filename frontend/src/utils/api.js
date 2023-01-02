@@ -103,7 +103,7 @@ class Api {
 }
 
 const api = new Api({
-  url: 'https://api.dbminin.students.nomoredomains.club',
+  url: 'http://api.dbminin.students.nomoredomains.club',
 })
 
 export default api;
