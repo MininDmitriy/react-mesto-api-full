@@ -1,4 +1,4 @@
-export const baseUrl = 'https://api.DBMinin.students.nomoredomains.club';
+export const baseUrl = 'https://api.dbminin.students.nomoredomains.club';
 
 export const handleRegistration = (userPassword, userEmail) => {
   return fetch(`${baseUrl}/signup`, {
