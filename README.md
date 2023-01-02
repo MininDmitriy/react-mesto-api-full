@@ -19,6 +19,6 @@
 
 Работа размещена на на [Яндекс.Облаке](https://DBMinin.students.nomoredomains.club).
 
-IP  158.160.22.173
-Frontend  https://DBMinin.students.nomoredomains.club
-Backend  https://api.DBMinin.students.nomoredomains.club
+IP  62.84.121.111
+Frontend  https://dbminin.students.nomoredomains.club
+Backend  https://api.dbminin.students.nomoredomains.club

@@ -30,7 +30,6 @@ function App() {
   const [renderLoading, setRenderLoading] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [email, setEmail] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
 
   useEffect(() => {
@@ -181,9 +180,6 @@ function App() {
         setIsInfoAuthentication(true);
         console.log(err);
       })
-      .finally(() => {
-        setIsLoading(false);
-      })
   }
 
   const checkToken = useCallback(() => {
@@ -200,9 +196,6 @@ function App() {
         .catch(err => {
           console.log(err);
         })
-        .finally(() => {
-          setIsLoading(false);
-        })
     }
   }, []);
 
@@ -210,10 +203,6 @@ function App() {
     setLoggedIn(false);
     localStorage.removeItem('jwt');
   }
-
-  // if (isLoading) {
-  //   return '...Loading';
-  // }
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
