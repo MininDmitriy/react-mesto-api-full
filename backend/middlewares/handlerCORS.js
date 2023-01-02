@@ -1,8 +1,6 @@
 const allowedCors = [
   'http://DBMinin.students.nomoredomains.club',
   'https://DBMinin.students.nomoredomains.club',
-  // 'http://localhost:3001',
-  // 'https://localhost:3001',
 ];
 
 const handlerCORS = (req, res, next) => {
