@@ -17,8 +17,8 @@
 
 ## Ссылка на сайт
 
-Работа размещена на на [Яндекс.Облаке](https://DBMinin.students.nomoredomains.club).
+Работа размещена на на [Яндекс.Облаке](https://dbminin.students.nomoredomains.club).
 
-IP  62.84.121.111
+IP  51.250.29.187
 Frontend  https://dbminin.students.nomoredomains.club
 Backend  https://api.dbminin.students.nomoredomains.club
