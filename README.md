@@ -17,7 +17,7 @@
 
 ## Ссылка на сайт
 
-Работа размещена на на [Яндекс.Облаке](https://dbminin.students.nomoredomains.club).
+Работа размещена в публичном репозитории [GitHub](https://github.com/MininDmitriy/react-mesto-api-full).
 
 IP  51.250.29.187
 Frontend  https://dbminin.students.nomoredomains.club
