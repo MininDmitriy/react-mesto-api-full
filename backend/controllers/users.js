@@ -4,6 +4,7 @@ const User = require('../models/user');
 const { message, SUCCESS, CREATED } = require('../helpers/constants');
 const NotFoundError = require('../errors/NotFoundError');
 const UnauthorizedError = require('../errors/UnauthorizedError');
+const { privateKey } = require('../middlewares/auth');
 
 const getUsers = async (req, res, next) => {
   try {
@@ -91,7 +92,6 @@ const login = async (req, res, next) => {
       return next(new UnauthorizedError(message.errorIncorrectDate.login));
     }
     const payload = { _id: user._id };
-    const privateKey = 'my_secret_key';
     const token = JWT.sign(payload, privateKey, { expiresIn: '7d' });
     return res.status(SUCCESS).send({ token });
   } catch (err) {
