@@ -20,5 +20,6 @@
 Работа размещена в публичном репозитории [GitHub](https://github.com/MininDmitriy/react-mesto-api-full).
 
 IP  51.250.29.187
-Frontend  https://dbminin.students.nomoredomains.club
-Backend  https://api.dbminin.students.nomoredomains.club
+Frontend  https://dbminin.students.nomoredomains.club  
+Backend  https://api.dbminin.students.nomoredomains.club  
+Примечание: ссылки могут не работать в связи с тем, что закончилась аренда виртуальной машины на сервисе Яндекс.Облако.
